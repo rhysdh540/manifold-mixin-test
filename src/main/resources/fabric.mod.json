@@ -1,25 +1,33 @@
 {
   "schemaVersion": 1,
   "id": "manifoldmixintest",
-  "version": "${version}",
-
+  "version": "0",
   "name": "manifold-mixin-test",
   "description": "",
-  "authors": [],
-  "contact": {},
-
+  "authors": [
+    "rdh"
+  ],
+  "contact": {
+    "repo": "https://github.com/rhysdh540/manifold-mixin-test"
+  },
   "license": "unlicense",
-  "icon": "assets/manifoldmixintest/icon.png",
-
+  "icon": "icon.png",
   "environment": "*",
-  "entrypoints": {},
-
-      "mixins": [
-        "manifoldmixintest.mixins.json"
-      ],
-
+  "entrypoints": {
+    "main": [
+      "dev.rdh.manifoldmixintest.Test"
+    ]
+  },
+  "mixins": [
+    "manifoldmixintest.mixins.json"
+  ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
-    "minecraft": "${minecraft_version}"
+    "fabricloader": ">=0.14.22",
+    "minecraft": "1.20.2"
+  },
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_310": [ "dev/rdh/manifoldmixintest/mixin/MinecraftMixin" ]
+    }
   }
 }
