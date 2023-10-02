@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "manifoldmixintest",
+  "version": "${version}",
+
+  "name": "manifold-mixin-test",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "unlicense",
+  "icon": "assets/manifoldmixintest/icon.png",
+
+  "environment": "*",
+  "entrypoints": {},
+
+      "mixins": [
+        "manifoldmixintest.mixins.json"
+      ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
