@@ -27,7 +27,7 @@
   },
   "custom": {
     "loom:injected_interfaces": {
-      "net/minecraft/class_310": [ "dev/rdh/manifoldmixintest/mixin/MinecraftMixin" ]
+
     }
   }
 }

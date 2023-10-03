@@ -26,8 +26,12 @@ dependencies {
         it.officialMojangMappings { nameSyntheticMembers = false }
     })
 
-    implementation "systems.manifold:manifold-ext:${project.manifold_version}"
-    implementation "systems.manifold:manifold-props:${project.manifold_version}"
+    compileOnly annotationProcessor("systems.manifold:manifold-ext:${project.manifold_version}")
+    compileOnly annotationProcessor("systems.manifold:manifold-props:${project.manifold_version}")
+    include "systems.manifold:manifold-rt:${project.manifold_version}"
+    include "systems.manifold:manifold-ext-rt:${project.manifold_version}"
+    include "systems.manifold:manifold-props-rt:${project.manifold_version}"
+    include "systems.manifold:manifold-util:${project.manifold_version}"
 
     modImplementation "com.simibubi.create:create-fabric-${minecraft_version}:${create}+mc${minecraft_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api}+${minecraft_version}"
@@ -35,5 +39,6 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
+    options.release = 17
     options.compilerArgs += ['-Xplugin:Manifold']
 }
